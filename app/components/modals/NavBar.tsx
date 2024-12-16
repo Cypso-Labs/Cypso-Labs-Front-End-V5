@@ -101,21 +101,19 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc }) => {
       </div>
 
       {/* Mobile Navigation Dropdown */}
-      <div
-        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-          menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <ul className="flex flex-col items-start bg-[#2A3A46] rounded-lg shadow-lg p-4 gap-2">
-          {navLinks.map((link) => (
-            <li key={link.href} className="w-full">
-              <NavLink href={link.href} isActive={currentPath === link.href}>
-                {link.label}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {menuOpen && (
+        <div className="md:hidden bg-[#2A3A46] rounded-lg shadow-lg mt-2">
+          <ul className="flex flex-col items-start p-4">
+            {navLinks.map((link) => (
+              <li key={link.href} className="w-full">
+                <NavLink href={link.href} isActive={currentPath === link.href}>
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };
