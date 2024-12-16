@@ -57,7 +57,7 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc }) => {
             className="h-8 rounded-full"
             alt="Logo"
           /> */}
-          <span>Cypso Labs</span>
+          <span>CYPSO LABS</span>
         </a>
 
         {/* Hamburger Menu */}
