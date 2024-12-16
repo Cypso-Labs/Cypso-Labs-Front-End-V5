@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import * as React from "react";
@@ -11,8 +12,10 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = ({ href, children, isActive }) => (
   <a
     href={href}
-    className={`block px-4 py-2 rounded-md text-sm text-gray-300 hover:text-white hover:bg-[#0a1f33] transition duration-200 ${
-      isActive ? "text-white font-bold" : ""
+    className={`block text-[#ffffff] px-4 py-2 rounded-full hover:bg-[#5B8DBA] transition duration-300 ${
+      isActive
+        ? "bg-white text-[#0a192f] font-bold shadow-md"
+        : "text-white hover:text-white"
     }`}
     aria-current={isActive ? "page" : undefined}
   >
@@ -21,88 +24,98 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, isActive }) => (
 );
 
 interface NavBarProps {
-  companyName: string;
+  logoSrc?: string; // Optional logo
 }
 
-const NavBar: React.FC<NavBarProps> = ({ companyName }) => {
-  const [isMobile, setIsMobile] = React.useState<boolean>(false);
-  const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
+const NavBar: React.FC<NavBarProps> = ({ logoSrc }) => {
   const [currentPath, setCurrentPath] = React.useState<string>("/");
+  const [menuOpen, setMenuOpen] = React.useState<boolean>(false); // State for menu toggle
 
   React.useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
     setCurrentPath(window.location.pathname);
-
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
-    { href: "/portfolio", label: "Portfolio" },
-    { href: "/contact", label: "Contact" },
+    { href: "/case-studies", label: "Case Studies" },
+    { href: "/careers", label: "Careers" },
+    { href: "/contact", label: "Contact Us" },
   ];
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
   return (
-    <nav className="relative bg-gradient-to-r from-[#102542] to-[#0a1f33] text-white py-2 px-4 rounded-full shadow-lg max-w-5xl mx-auto mt-4">
-      <div className="flex items-center justify-between">
-        {/* Logo */}
-        <div className="text-xl font-semibold tracking-wide">{companyName}</div>
-
-        {/* Mobile Menu Button */}
-        {isMobile && (
-          <button
-            onClick={toggleMenu}
-            className="focus:outline-none p-2 rounded-md hover:bg-[#0a1f33] transition"
-            aria-expanded={isMenuOpen}
-            aria-label="Toggle navigation menu"
-          >
-            <div className="space-y-1">
-              <div className="w-6 h-0.5 bg-white"></div>
-              <div className="w-6 h-0.5 bg-white"></div>
-              <div className="w-6 h-0.5 bg-white"></div>
-            </div>
-          </button>
-        )}
+    <nav className="bg-gradient-to-r from-[#2A3A46] to-[#3A5A6C] rounded-full p-2 mt-4 mx-auto max-w-6xl shadow-lg">
+      <div className="flex items-center justify-between px-6">
+        {/* Left Section: Company Name or Logo */}
+        <div className="flex items-center gap-2">
+          {logoSrc && (
+            <img
+              src={logoSrc}
+              alt="CYPSO LABS logo"
+              className="w-10 h-10 object-contain"
+            />
+          )}
+          <span className="text-white text-2xl font-bold tracking-wide">
+            CYPSO LABS
+          </span>
+        </div>
 
         {/* Desktop Navigation */}
-        {!isMobile && (
-          <div className="flex gap-6">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.href}
-                href={link.href}
-                isActive={currentPath === link.href}
-              >
-                {link.label}
-              </NavLink>
-            ))}
-          </div>
-        )}
+        <div className="hidden md:flex gap-6 items-center">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.href}
+              href={link.href}
+              isActive={currentPath === link.href}
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-white focus:outline-none focus:ring-2 focus:ring-white"
+            aria-label="Open menu"
+          >
+            {/* Hamburger Icon */}
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Dropdown */}
-      {isMobile && isMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-[#0a192f] rounded-b-lg shadow-lg z-50">
-          <div className="flex flex-col py-2 px-4">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.href}
-                href={link.href}
-                isActive={currentPath === link.href}
-              >
+      {/* Mobile Navigation Dropdown */}
+      <div
+        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+          menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <ul className="flex flex-col items-start bg-[#2A3A46] rounded-lg shadow-lg p-4 gap-2">
+          {navLinks.map((link) => (
+            <li key={link.href} className="w-full">
+              <NavLink href={link.href} isActive={currentPath === link.href}>
                 {link.label}
               </NavLink>
-            ))}
-          </div>
-        </div>
-      )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
