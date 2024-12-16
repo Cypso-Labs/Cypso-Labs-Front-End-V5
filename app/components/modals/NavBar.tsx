@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
 "use client";
-
 import * as React from "react";
 
 interface NavLinkProps {
@@ -12,10 +12,10 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = ({ href, children, isActive }) => (
   <a
     href={href}
-    className={`block text-[#070101] px-4 py-2 rounded-full hover:bg-[#5B8DBA] transition duration-300 ${
+    className={`block px-4 py-2 text-white rounded-lg transition duration-300 hover:bg-white hover:text-blue-900 md:inline-flex md:items-center md:rounded-none md:text-gray-200 md:hover:text-white md:hover:bg-transparent md:font-medium ${
       isActive
-        ? "bg-white text-[#0a192f] font-bold shadow-md"
-        : "text-white hover:text-grey"
+        ? "font-bold text-white bg-blue-600 md:bg-transparent md:text-blue-400"
+        : ""
     }`}
     aria-current={isActive ? "page" : undefined}
   >
@@ -24,12 +24,12 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, isActive }) => (
 );
 
 interface NavBarProps {
-  logoSrc?: string; 
+  logoSrc?: string;
 }
 
 const NavBar: React.FC<NavBarProps> = ({ logoSrc }) => {
   const [currentPath, setCurrentPath] = React.useState<string>("/");
-  const [menuOpen, setMenuOpen] = React.useState<boolean>(false); 
+  const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     setCurrentPath(window.location.pathname);
@@ -45,66 +45,55 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc }) => {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-[#2A3A46] to-[#3A5A6C] rounded-full p-2 mt-4 mx-auto max-w-6xl shadow-lg">
-      <div className="flex items-center justify-between px-6">
-      
-        <div className="flex items-center gap-2">
-          {logoSrc && (
-            <img
-              src={logoSrc}
-              alt="CYPSO LABS logo"
-              className="w-10 h-10 object-contain"
-            />
-          )}
-          <span className="text-white text-2xl font-bold tracking-wide">
-            CYPSO LABS
-          </span>
-        </div>
+    <nav className="bg-gradient-to-r from-blue-900 to-blue-500 rounded-full shadow-lg mx-auto mt-4 max-w-7xl px-4">
+      <div className="flex items-center justify-between py-2">
+        {/* Logo */}
+        <a
+          href="/"
+          className="flex items-center space-x-2 text-white text-2xl font-semibold"
+        >
+          {/* <img
+            src={logoSrc || "https://flowbite.com/docs/images/logo.svg"}
+            className="h-8 rounded-full"
+            alt="Logo"
+          /> */}
+          <span>Cypso Labs</span>
+        </a>
 
-       
-        <div className="hidden md:flex gap-6 items-center">
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.href}
-              href={link.href}
-              isActive={currentPath === link.href}
-            >
-              {link.label}
-            </NavLink>
-          ))}
-        </div>
-
-       
-        <div className="md:hidden flex items-center">
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="text-white focus:outline-none focus:ring-2 focus:ring-white"
-            aria-label="Open menu"
+        {/* Hamburger Menu */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden inline-flex items-center p-2 text-white rounded-lg focus:ring-2 focus:ring-gray-300"
+          aria-controls="navbar-default"
+          aria-expanded={menuOpen}
+        >
+          <span className="sr-only">Open main menu</span>
+          <svg
+            className="w-6 h-6"
+            aria-hidden="true"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-          
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </button>
-        </div>
-      </div>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
 
-      {menuOpen && (
-        <div className="md:hidden bg-[#2A3A46] rounded-lg shadow-lg mt-2">
-          <ul className="flex flex-col items-start p-4">
+        {/* Menu */}
+        <div
+          className={`${
+            menuOpen ? "block" : "hidden"
+          } absolute z-50 w-full top-14 left-0 bg-gradient-to-b from-blue-900 to-blue-700 md:bg-transparent md:relative md:block md:top-0 md:w-auto md:z-auto rounded-lg shadow-lg md:shadow-none`}
+          id="navbar-default"
+        >
+          <ul className="flex flex-col p-4 md:p-0 md:flex-row md:space-x-6">
             {navLinks.map((link) => (
-              <li key={link.href} className="w-full">
+              <li key={link.href}>
                 <NavLink href={link.href} isActive={currentPath === link.href}>
                   {link.label}
                 </NavLink>
@@ -112,7 +101,7 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc }) => {
             ))}
           </ul>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
