@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import * as React from "react";
@@ -12,8 +11,8 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = ({ href, children, isActive }) => (
   <a
     href={href}
-    className={`hover:text-gray-300 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 rounded-md px-2 py-1 ${
-      isActive ? "text-white" : "text-gray-400"
+    className={`block px-4 py-2 rounded-md text-sm text-gray-300 hover:text-white hover:bg-[#0a1f33] transition duration-200 ${
+      isActive ? "text-white font-bold" : ""
     }`}
     aria-current={isActive ? "page" : undefined}
   >
@@ -22,19 +21,16 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, isActive }) => (
 );
 
 interface NavBarProps {
-  logoSrc: string;
   companyName: string;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ logoSrc, companyName }) => {
+const NavBar: React.FC<NavBarProps> = ({ companyName }) => {
   const [isMobile, setIsMobile] = React.useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
   const [currentPath, setCurrentPath] = React.useState<string>("/");
 
   React.useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
 
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -47,32 +43,37 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc, companyName }) => {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
-    { href: "/case-studies", label: "Case Studies" },
-    { href: "/careers", label: "Careers" },
-    { href: "/contact", label: "Contact Us" },
+    { href: "/portfolio", label: "Portfolio" },
+    { href: "/contact", label: "Contact" },
   ];
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="relative bg-[#112240] text-white py-4">
-      {/* Main Container */}
-      <div className="flex items-center justify-between px-6 lg:px-12">
+    <nav className="relative bg-gradient-to-r from-[#102542] to-[#0a1f33] text-white py-2 px-4 rounded-full shadow-lg max-w-5xl mx-auto mt-4">
+      <div className="flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <img
-            src={logoSrc}
-            alt={`${companyName} logo`}
-            className="w-8 h-8 object-contain"
-          />
-          <span className="text-lg font-bold">{companyName}</span>
-        </div>
+        <div className="text-xl font-semibold tracking-wide">{companyName}</div>
+
+        {/* Mobile Menu Button */}
+        {isMobile && (
+          <button
+            onClick={toggleMenu}
+            className="focus:outline-none p-2 rounded-md hover:bg-[#0a1f33] transition"
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle navigation menu"
+          >
+            <div className="space-y-1">
+              <div className="w-6 h-0.5 bg-white"></div>
+              <div className="w-6 h-0.5 bg-white"></div>
+              <div className="w-6 h-0.5 bg-white"></div>
+            </div>
+          </button>
+        )}
 
         {/* Desktop Navigation */}
         {!isMobile && (
-          <div className="flex gap-8 items-center">
+          <div className="flex gap-6">
             {navLinks.map((link) => (
               <NavLink
                 key={link.href}
@@ -84,29 +85,12 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc, companyName }) => {
             ))}
           </div>
         )}
-
-        {/* Mobile Menu Button */}
-        {isMobile && (
-          <button
-            onClick={toggleMenu}
-            className="p-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
-            aria-expanded={isMenuOpen}
-            aria-label="Toggle navigation menu"
-          >
-            {/* Hamburger Icon */}
-            <div className="space-y-1.5">
-              <div className="w-6 h-0.5 bg-white"></div>
-              <div className="w-6 h-0.5 bg-white"></div>
-              <div className="w-6 h-0.5 bg-white"></div>
-            </div>
-          </button>
-        )}
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Dropdown */}
       {isMobile && isMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-[#0a192f] rounded-b-lg shadow-lg z-50">
-          <div className="flex flex-col py-4 px-6">
+          <div className="flex flex-col py-2 px-4">
             {navLinks.map((link) => (
               <NavLink
                 key={link.href}
