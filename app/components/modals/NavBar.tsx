@@ -12,10 +12,10 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = ({ href, children, isActive }) => (
   <a
     href={href}
-    className={`block text-[#ffffff] px-4 py-2 rounded-full hover:bg-[#5B8DBA] transition duration-300 ${
+    className={`block text-[#070101] px-4 py-2 rounded-full hover:bg-[#5B8DBA] transition duration-300 ${
       isActive
         ? "bg-white text-[#0a192f] font-bold shadow-md"
-        : "text-white hover:text-white"
+        : "text-white hover:text-grey"
     }`}
     aria-current={isActive ? "page" : undefined}
   >
@@ -24,12 +24,12 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, isActive }) => (
 );
 
 interface NavBarProps {
-  logoSrc?: string; // Optional logo
+  logoSrc?: string; 
 }
 
 const NavBar: React.FC<NavBarProps> = ({ logoSrc }) => {
   const [currentPath, setCurrentPath] = React.useState<string>("/");
-  const [menuOpen, setMenuOpen] = React.useState<boolean>(false); // State for menu toggle
+  const [menuOpen, setMenuOpen] = React.useState<boolean>(false); 
 
   React.useEffect(() => {
     setCurrentPath(window.location.pathname);
@@ -47,7 +47,7 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc }) => {
   return (
     <nav className="bg-gradient-to-r from-[#2A3A46] to-[#3A5A6C] rounded-full p-2 mt-4 mx-auto max-w-6xl shadow-lg">
       <div className="flex items-center justify-between px-6">
-        {/* Left Section: Company Name or Logo */}
+      
         <div className="flex items-center gap-2">
           {logoSrc && (
             <img
@@ -61,7 +61,7 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc }) => {
           </span>
         </div>
 
-        {/* Desktop Navigation */}
+       
         <div className="hidden md:flex gap-6 items-center">
           {navLinks.map((link) => (
             <NavLink
@@ -74,14 +74,14 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc }) => {
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
+       
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="text-white focus:outline-none focus:ring-2 focus:ring-white"
             aria-label="Open menu"
           >
-            {/* Hamburger Icon */}
+          
             <svg
               className="w-6 h-6"
               fill="none"
@@ -100,7 +100,6 @@ const NavBar: React.FC<NavBarProps> = ({ logoSrc }) => {
         </div>
       </div>
 
-      {/* Mobile Navigation Dropdown */}
       {menuOpen && (
         <div className="md:hidden bg-[#2A3A46] rounded-lg shadow-lg mt-2">
           <ul className="flex flex-col items-start p-4">
