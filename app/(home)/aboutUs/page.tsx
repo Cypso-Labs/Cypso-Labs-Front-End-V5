@@ -74,4 +74,4 @@ import { coreValues, founders } from "./data";
   );
 }
 
-export default AboutPage();
+export default AboutPage;

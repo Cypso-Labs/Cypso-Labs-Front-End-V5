@@ -33,8 +33,8 @@ export default function RootLayout({
         style={{ fontFamily: "Rajdhani, sans-serif" }} // Apply Rajdhani font globally
       >
         <NavBar />
-        {/* <SocialMedia /> */}
-        <AboutUs/>
+        <SocialMedia />
+        {/* <AboutUs/> */}
         {children}
       </body>
     </html>
