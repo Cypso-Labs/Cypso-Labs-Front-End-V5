@@ -6,7 +6,7 @@ import "./globals.css";
 import NavBar from "./components/modals/NavBar";
 // Remove the SocialMedia import
 // import SocialMedia from "./components/modals/SocialMedia";
-import AboutUs from "./(home)/aboutUs/AboutPage";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-html-link-for-pages */
 "use client";
 import * as React from "react";
@@ -83,17 +84,41 @@ const NavBar: React.FC = () => {
       </div>
 
       {/* Mobile Menu */}
+      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="absolute top-20 left-0 w-full bg-gray-700 rounded-lg shadow-lg md:hidden">
-          <ul className="flex flex-col space-y-2 p-4">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <NavLink href={link.href} isActive={currentPath === link.href}>
-                  {link.label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
+        <div className="absolute top-0 right-0 w-1/2 h-screen bg-black/50 backdrop-blur-lg md:hidden">
+          <div className="w-full bg-white/20 backdrop-blur-lg rounded-l-lg shadow-lg relative">
+            {/* Close Button */}
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="absolute top-4 right-4 text-white text-2xl focus:outline-none"
+            >
+              &#x2715; {/* Close Icon */}
+            </button>
+
+            {/* Small Icon at the Top */}
+            <div className="flex justify-center mt-4">
+              <img
+                src="/images/image1.png" // Replace with the correct path
+                alt="Menu Icon"
+                className="w-10 h-10"
+              />
+            </div>
+
+            {/* Navigation Links - Positioned at the Top */}
+            <ul className="flex flex-col space-y-4 pt-8 px-6">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <NavLink
+                    href={link.href}
+                    isActive={currentPath === link.href}
+                  >
+                    {link.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
     </nav>
