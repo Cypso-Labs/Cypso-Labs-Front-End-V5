@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div className="w-full max-h-screen">
+    <div className="w-full">
             <section
                 className="relative text-white m-5 rounded-[18px]"
                 style={{

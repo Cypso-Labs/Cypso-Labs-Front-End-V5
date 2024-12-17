@@ -1,27 +1,27 @@
 import React from "react";
-import logo from "../../../public/cypso-logo.svg";
+import logo from "../../../../public/cypso-logo.svg";
 import Image from "next/image";
 import { Lato } from "next/font/google";
 import localFont from "next/font/local";
-import "./footer/index.css";
+import "./index.css";
 
 const lato = Lato({
   weight: "400",
 });
 
 const font = localFont({
-  src: "../../ui/fonts/NicoMoji-Regular.ttf",
+  src: "../../fonts/NicoMoji-Regular.ttf",
 });
 
 function Footer() {
   return (
     <div>
       <footer className="">
-        <Image
+        {/* <Image
           className="z-10 absolute top-[20px] end-[20px]"
           src={logo}
           alt="cypso logo"
-        />
+        /> */}
         <div
           className={`rounded-edge text-[#F9F9F9] mx-auto w-full p-10 md:p-11 lg:p-16 pb-5 md:pb-10 mt-16 ${lato.className}`}
           style={{

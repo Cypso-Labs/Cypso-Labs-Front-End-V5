@@ -38,7 +38,7 @@ const NavBar: React.FC = () => {
   ];
 
   return (
-    <nav className="relative z-10 mx-auto mt-4 max-w-screen-lg px-6">
+    <nav className="absolute z-10 mx-auto mt-4 max-w-screen-lg px-6">
       {/* Navbar Container */}
       <div className="bg-gray-700 rounded-full shadow-md">
         <div className="flex items-center justify-between h-16 px-6">
