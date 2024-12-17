@@ -31,8 +31,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         style={{ fontFamily: "Rajdhani, sans-serif" }} // Apply Rajdhani font globally
       >
-        <NavBar />
-          <SocialMedia />
+        {/* <NavBar />
+          <SocialMedia /> */}
         {children}
       </body>
     </html>
