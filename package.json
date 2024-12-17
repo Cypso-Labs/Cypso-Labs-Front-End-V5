@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/rajdhani": "^5.1.0",
+    "cypso-labs-front-end-v5": "file:",
     "next": "15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
