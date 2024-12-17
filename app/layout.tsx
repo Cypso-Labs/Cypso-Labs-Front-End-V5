@@ -5,6 +5,7 @@ import "@fontsource/rajdhani/500.css"; // Rajdhani Font Imported
 import "./globals.css";
 import NavBar from "./components/modals/NavBar";
 import SocialMedia from "./components/modals/SocialMedia";
+import Footer from "./ui/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,9 +33,19 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         style={{ fontFamily: "Rajdhani, sans-serif" }} // Apply Rajdhani font globally
       >
-        {/* <NavBar />
-          <SocialMedia /> */}
-        {children}
+        <div>
+          <div>
+            <NavBar />
+          </div>
+
+          <SocialMedia />
+
+          <div className="">{children}</div>
+
+          <div>
+            <Footer />
+          </div>
+        </div>
       </body>
     </html>
   );
