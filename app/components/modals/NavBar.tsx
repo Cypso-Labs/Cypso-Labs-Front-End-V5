@@ -12,9 +12,9 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = ({ href, children, isActive }) => (
   <a
     href={href}
-    className={`px-4 py-2 text-white text-sm font-medium transition-all duration-300 hover:text-white hover:opacity-80 ${
-      isActive ? "text-white font-bold" : "text-gray-300"
-    }`}
+    className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 
+      ${isActive ? "bg-blue-200 text-blue-800 font-semibold" : "text-gray-300"}
+      hover:bg-blue-100 hover:text-blue-700`}
   >
     {children}
   </a>
@@ -22,9 +22,10 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, isActive }) => (
 
 const NavBar: React.FC = () => {
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
-  const [currentPath, setCurrentPath] = React.useState<string>("/");
+  const [currentPath, setCurrentPath] = React.useState<string | null>(null); // Prevent initial mismatch
 
   React.useEffect(() => {
+    // Update current path after mounting
     setCurrentPath(window.location.pathname);
   }, []);
 
@@ -74,7 +75,7 @@ const NavBar: React.FC = () => {
               <NavLink
                 key={link.href}
                 href={link.href}
-                isActive={currentPath === link.href}
+                isActive={currentPath === link.href} // Only check after mounting
               >
                 {link.label}
               </NavLink>
@@ -110,7 +111,7 @@ const NavBar: React.FC = () => {
                 <li key={link.href}>
                   <NavLink
                     href={link.href}
-                    isActive={currentPath === link.href}
+                    isActive={currentPath === link.href} // Ensure SSR safety
                   >
                     {link.label}
                   </NavLink>
