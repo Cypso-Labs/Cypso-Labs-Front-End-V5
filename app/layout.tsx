@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@fontsource/rajdhani/500.css"; // Rajdhani Font Imported
 import "./globals.css";
+
+import ContactUs from "../app/components/models/contactUs";
 import NavBar from "./ui/components/NavBar";
 import SocialMedia from "./ui/components/SocialMedia";
 import Footer from "./ui/components/footer/footer";
@@ -32,15 +34,14 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         style={{ fontFamily: "Rajdhani, sans-serif" }}
       >
+        {children}
         <div>
           <div>
             <NavBar />
           </div>
 
           <SocialMedia />
-
           <div className="">{children}</div>
-
           <div>
             <Footer />
           </div>
