@@ -70,7 +70,7 @@ const NavBar: React.FC = () => {
           </button>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 font-urbanist">
             {navLinks.map((link) => (
               <NavLink
                 key={link.href}
