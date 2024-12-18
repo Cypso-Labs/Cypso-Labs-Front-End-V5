@@ -41,7 +41,7 @@ const NavBar: React.FC = () => {
   return (
     <nav className="absolute top-8 left-0 w-full z-10 px-6">
       {/* Navbar Container */}
-      <div className="bg-transparent shadow-md rounded-full mx-auto max-w-screen-lg">
+      <div className="bg-white/10 backdrop-blur-lg shadow-lg rounded-full mx-auto max-w-screen-lg">
         <div className="flex items-center justify-between h-16 px-6">
           {/* Logo */}
           <a href="/" className="text-white text-2xl font-bold">
