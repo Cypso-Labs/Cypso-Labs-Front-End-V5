@@ -1,16 +1,18 @@
 import React from "react";
+import HeroImage from "./ui/components/hero-image";
 
 export default function Home() {
   return (
     <div className="w-full">
             <section
                 className="relative text-white m-5 rounded-[18px] bg-gray-50"
-                style={{
-                backgroundImage: "url('/images/hero.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                }}
+                // style={{
+                // backgroundImage: "url('/images/hero.png')",
+                // backgroundSize: "cover",
+                // backgroundPosition: "center",
+                // }}
             >
+                <HeroImage />
                 <div className="container mx-auto flex flex-col items-center justify-center h-[80vh] sm:h-[100vh] text-center px-12 sm:px-12 md:px-20 lg:px-44">
                 {/* Heading */}
                 <h2 className="font-urbanist font-semibold text-[32px] leading-[40px] tracking-[0.0075em] md:text-[48px] md:leading-[56px] lg:text-[61px] lg:leading-[76.8px]">

@@ -8,6 +8,10 @@ import NavBar from "./ui/components/NavBar";
 import SocialMedia from "./ui/components/SocialMedia";
 import Footer from "./ui/components/footer/footer";
 import ContactUs from "./ui/components/contactUs";
+import HeroImage from "./ui/components/hero-image";
+import ChatIcon from "./ui/components/chat-icon";
+
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -35,11 +39,12 @@ export default function RootLayout({
         style={{ fontFamily: "Rajdhani, sans-serif" }}
       >
         <div>
-          <div>
-            <NavBar />
-          </div>
+          <SocialMedia />
+          <ChatIcon />
 
-          {/* <SocialMedia /> */}
+          <NavBar />
+          <HeroImage />
+
           <div>{children}</div>
 
           {/* <div className="">

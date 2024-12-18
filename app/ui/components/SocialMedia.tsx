@@ -16,7 +16,7 @@ const SocialMedia = () => {
   if (isAboutPage) return null; // Disable SocialMedia component on About Us page
 
   return (
-    <div className="fixed left-4 top-1/4 z-50">
+    <div className={`fixed left-[48px] top-[296px] z-50 ${pathname=='/contact' ? 'hidden' : ''}`}>
       {/* Desktop View */}
       <div className="hidden lg:flex flex-col space-y-4">
         <a
