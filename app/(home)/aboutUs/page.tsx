@@ -8,18 +8,18 @@ import { coreValues, founders } from "./data";
 function AboutPage() {
   return (
     <div className="flex flex-col items-center bg-neutral-50">
-      {/* Top Navigation and Header */}
+    
       <div
         className="relative w-full bg-cover bg-center text-white"
         style={{ backgroundImage: "url('/images/hero.png')" }}
       >
   
 
-        {/* About Section Header */}
+    
         <div className="text-center py-16 px-8 md:py-28 md:px-16 bg-black bg-opacity-60">
           <div className="flex justify-center mb-4">
             <img
-              src="/cypso-logo.png" // Replace with actual logo
+              src="/cypso-logo.png" 
               alt="Cypso Labs Logo"
               className="w-12 h-12"
             />
@@ -64,7 +64,7 @@ function AboutPage() {
             </div>
           </div>
 
-          {/* Core Values Section */}
+      
           <div className="flex flex-col mt-16 md:mt-24 w-full">
             <SectionHeading
               title="Our Core Values"
@@ -77,7 +77,7 @@ function AboutPage() {
             </div>
           </div>
 
-          {/* Founders Section */}
+
           <div className="flex flex-col mt-16 md:mt-24 w-full">
             <SectionHeading
               title="Our Founders"
@@ -90,7 +90,7 @@ function AboutPage() {
             </div>
           </div>
 
-          {/* International Client Network Section */}
+
           <div className="flex flex-col mt-16 md:mt-24">
             <SectionHeading
               title="Our International Client Network"
