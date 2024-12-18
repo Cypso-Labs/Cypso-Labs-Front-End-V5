@@ -18,7 +18,7 @@ function AboutPage() {
             <img
               src="/cypso-logo.png"
               alt="Cypso Labs Logo"
-              className="w-12 h-12 sm:w-16 sm:h-16"
+              className="w-12 h-12 sm:w-16 sm:h-16 p-4"
             />
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
