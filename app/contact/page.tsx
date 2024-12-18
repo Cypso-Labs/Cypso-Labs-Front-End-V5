@@ -291,7 +291,7 @@ function ContactUsPage() {
 
               <textarea
                 style={{ boxShadow: "0px 0px 4px 0px #00000040 inset" }}
-                className="h-[295px] text-gray-900 text-sm rounded-[5px] focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                className="resize-none h-[115px] text-gray-900 text-sm rounded-[5px] focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 placeholder="Subject"
                 required
               />
@@ -309,6 +309,21 @@ function ContactUsPage() {
               </button>
             </div>
           </form>
+        </div>
+      </section>
+
+      {/* ---------------------section 3--------------------- */}
+      <section>
+        <div className="flex justify-center">
+          <iframe
+            className="w-full max-w-screen-xl h-[145px] md:h-[300px] lg:h-[470px] rounded-[30px] px-3"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1981.4079291614898!2d79.928243!3d6.669726!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24872fce1ad3d%3A0x73d5ab8d79ce8942!2s500%20Colombo%20-%20Galle%20-%20Hambantota%20-%20Wellawaya%20Rd%2C%20Wadduwa!5e0!3m2!1sen!2slk!4v1734502632507!5m2!1sen!2slk"
+            // width="600"
+            // height="450"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </section>
     </div>
