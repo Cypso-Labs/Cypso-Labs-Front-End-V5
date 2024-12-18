@@ -1,6 +1,11 @@
+// RootLayout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import "@fontsource/rajdhani/500.css"; // Rajdhani Font Imported
 import "./globals.css";
+import NavBar from "./ui/components/NavBar";
+import SocialMedia from "./ui/components/SocialMedia";
+import Footer from "./ui/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,8 +31,21 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{ fontFamily: "Rajdhani, sans-serif" }} // Apply Rajdhani font globally
       >
-        {children}
+        <div>
+          <div>
+            <NavBar />
+          </div>
+
+          <SocialMedia />
+
+          <div className="">{children}</div>
+
+          <div>
+            <Footer />
+          </div>
+        </div>
       </body>
     </html>
   );
