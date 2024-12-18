@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@fontsource/rajdhani/500.css"; // Rajdhani Font Imported
 import "./globals.css";
-import NavBar from "./components/modals/NavBar";
-import SocialMedia from "./components/modals/SocialMedia";
+import NavBar from "./ui/components/NavBar";
+import SocialMedia from "./ui/components/SocialMedia";
 import Footer from "./ui/components/footer";
 
 const geistSans = Geist({
