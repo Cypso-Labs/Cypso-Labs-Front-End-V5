@@ -23,7 +23,7 @@ function Footer() {
           alt="cypso logo"
         /> */}
         <div
-          className={`rounded-edge text-[#F9F9F9] mx-auto w-full p-10 md:p-11 lg:p-16 pb-5 md:pb-10 mt-16 ${lato.className}`}
+          className={`rounded-edge text-[#F9F9F9] mx-auto w-full p-8 md:p-11 lg:p-16 pb-5 md:pb-10 mt-16 ${lato.className}`}
           style={{
             background:
               "linear-gradient(89.79deg, #0D476D 0.15%, #115684 99.79%)",

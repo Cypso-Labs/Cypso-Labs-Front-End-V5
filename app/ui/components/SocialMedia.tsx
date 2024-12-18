@@ -1,3 +1,6 @@
+'use client'
+
+import { usePathname } from "next/navigation";
 import React from "react";
 import {
   FaFacebookF,
@@ -7,8 +10,10 @@ import {
 } from "react-icons/fa";
 
 const SocialMedia = () => {
+  const currentPath = usePathname();
+
   return (
-    <div className="fixed left-4 top-1/4 z-50">
+    <div className={`fixed left-4 top-1/4 z-50 ${currentPath=='/contact' ? 'hidden' : ''}`}>
       {/* Desktop View */}
       <div className="hidden lg:flex flex-col space-y-4">
         <a
