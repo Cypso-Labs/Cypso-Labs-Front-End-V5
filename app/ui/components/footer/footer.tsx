@@ -6,7 +6,6 @@ import localFont from "next/font/local";
 import "./index.css";
 
 const lato = Lato({
-  preload: false,
   weight: "400",
 });
 

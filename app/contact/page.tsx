@@ -5,12 +5,10 @@ import logo from "../../public/cypso-logo.svg";
 import { Urbanist, Montserrat } from "next/font/google";
 
 const urbanist = Urbanist({
-  preload: false,
   weight: ["500", "600"],
 });
 
 const montserrat = Montserrat({
-  preload: false,
   weight: ["500"],
 });
 
