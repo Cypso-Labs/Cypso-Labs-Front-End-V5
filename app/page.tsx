@@ -17,7 +17,6 @@ export default function Home() {
                 placeholder="blur"
                 priority
                 />
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/40 to-transparent"></div>
             </div>
 
             {/* Content */}
@@ -28,7 +27,7 @@ export default function Home() {
                 </h2>
 
                 {/* Paragraph */}
-                <p className="font-montserrat font-normal text-[14px] leading-[22px] sm:text-[16px] sm:leading-[24px] md:text-[18px] md:leading-[26px] lg:text-[20px] lg:leading-[28px] mt-4 md:mt-6 mb-4 md:mb-6">
+                <p className="font-montserrat font-normal text-[16px] leading-[22px] md:text-[18px] md:leading-[26px] lg:text-[20px] lg:leading-[28px] mt-4 md:mt-6 mb-4 md:mb-6">
                 Future-proof your business. Capitalize on emerging technologies. For
                 captivating websites and seamless mobile apps, we elevate your online
                 presence. Let&apos;s transform your vision into reality.
@@ -54,7 +53,7 @@ export default function Home() {
                     <h2 className="font-urbanist text-3xl md:text-5xl lg:text-6xl font-medium text-gray-800 mb-6">
                     We Provide Affordable and Efficient <br /> Digital Solutions
                     </h2>
-                    <p className="text-gray-600 text-sm mb-12 font-montserrat">
+                    <p className="text-gray-600 text-sm md:text-base lg:text-lg mb-12 font-montserrat">
                     We offer powerful, budget-friendly solutions tailored to your unique needs. From sleek websites to
                     targeted marketing and intuitive apps, we help you grow your business without breaking the bank.
                     </p>
@@ -62,21 +61,21 @@ export default function Home() {
                     {/* Cards Section */}
                     <div className="flex flex-row sm:flex-row justify-center gap-2 sm:gap-8 overflow-x-auto font-montserrat">
                     {/* Card 1 */}
-                    <div className="border border-[#DEDEDE] shadow-lg rounded-[5px] p-4 bg-white w-full md:w-1/5">
-                        <h3 className="text-3xl font-bold text-[#0D476D] mb-4">50+</h3>
-                        <p className="text-gray-600 text-xs sm:text-sm">Completed Projects</p>
+                    <div className="border border-[#DEDEDE] shadow-lg rounded-[5px] p-4 md:p-8 lg:p-10 bg-white w-full md:w-1/5">
+                        <h3 className="text-3xl lg:text-[56px] font-bold text-[#0D476D] mb-4 lg:mb-6">50+</h3>
+                        <p className="text-gray-600 text-xs md:text-base lg:text-lg">Completed Projects</p>
                     </div>
 
                     {/* Card 2 */}
-                    <div className="border border-[#DEDEDE] shadow-lg rounded-[5px] p-4 bg-white w-full md:w-1/5">
-                        <h3 className="text-3xl font-bold text-[#0D476D] mb-4">5+</h3>
-                        <p className="text-gray-600 text-xs sm:text-sm">Years Experience</p>
+                    <div className="border border-[#DEDEDE] shadow-lg rounded-[5px] p-4 md:p-8 lg:p-10 bg-white w-full md:w-1/5">
+                        <h3 className="text-3xl lg:text-[56px] font-bold text-[#0D476D] mb-4 lg:mb-6">5+</h3>
+                        <p className="text-gray-600 text-[8px] md:text-base lg:text-lg">Years Experience</p>
                     </div>
 
                     {/* Card 3 */}
-                    <div className="border border-[#DEDEDE] shadow-lg rounded-[5px] p-4 bg-white w-full md:w-1/5">
-                        <h3 className="text-3xl font-bold text-[#0D476D] mb-4">30+</h3>
-                        <p className="text-gray-600 text-xs sm:text-sm">Team Members</p>
+                    <div className="border border-[#DEDEDE] shadow-lg rounded-[5px] p-4 md:p-8 lg:p-10 bg-white w-full md:w-1/5">
+                        <h3 className="text-3xl lg:text-[56px] font-bold text-[#0D476D] mb-4 lg:mb-6">30+</h3>
+                        <p className="text-gray-600 text-xs md:text-base lg:text-lg">Team Members</p>
                     </div>
                     </div>
                 </div>
@@ -90,12 +89,12 @@ export default function Home() {
                 {/* Title */}
                 <div className="flex flex-col-reverse md:flex-row justify-between items-center mb-10">
                     {/* Left Side - Button */}
-                    <button className="bg-[#0D476D] hover:bg-white text-white hover:text-[#0D476D] font-semibold rounded-[12px] h-[72px] px-[38px] border-2 border-transparent hover:border-[#0D476D] py-[8px] transition-all duration-300 mb-0 md:mb-4 sm:mt-5 mt-0 font-montserrat">
+                    <button className="bg-[#0D476D] hover:bg-white text-white hover:text-[#0D476D] font-semibold rounded-[12px] h-[72px] px-[38px] border-2 border-transparent hover:border-[#0D476D] py-[8px] transition-all duration-300 mb-4 md:mb-0 sm:mt-0 mt-4 font-montserrat">
                         Get Started
                     </button>
 
                     {/* Right Side - Heading */}
-                    <h2 className="font-urbanist text-center md:text-right font-[500] text-[36px] md:text-[56px] leading-[1.2] tracking-[0.0075em] text-gray-800">
+                    <h2 className="font-urbanist text-center md:text-right font-[500] text-[28px] md:text-[40px] lg:text-[56px] leading-[1.2] tracking-[0.0075em] text-gray-800">
                         Customized Solutions for <br /> Optimal Performance
                     </h2>
                 </div>
@@ -105,10 +104,10 @@ export default function Home() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8">
                   {/* Card 1 */}
                   <div className="group bg-white shadow-lg rounded-3xl p-6 hover:bg-gradient-to-r from-[#0D476D] to-[#115684] transition-all duration-300">
-                    <h3 className="font-urbanist text-2xl font-semibold text-gray-800 mb-4 group-hover:text-white">
+                    <h3 className="font-urbanist text-lg md:text-xl lg:text-2xl font-semibold text-gray-800 mb-4 group-hover:text-white">
                       Cyber Security
                     </h3>
-                    <p className="text-black group-hover:text-white text-lg font-montserrat">
+                    <p className="text-black group-hover:text-white text-sm md:text-base lg:text-lg font-montserrat">
                       Protect your business with comprehensive cybersecurity, including threat detection,
                       vulnerability assessments, and data protection to secure assets.
                     </p>
@@ -116,8 +115,8 @@ export default function Home() {
 
                   {/* Card 2 */}
                   <div className="group bg-[#0D476D] shadow-lg rounded-3xl p-6 hover:bg-white transition-all duration-300">
-                    <h3 className="text-white font-urbanist text-2xl font-semibold mb-4 group-hover:text-black">Software & Mobile App Development</h3>
-                    <p className="text-white group-hover:text-black text-lg font-montserrat">
+                    <h3 className="text-white font-urbanist text-lg md:text-xl lg:text-2xl font-semibold mb-4 group-hover:text-black">Software & Mobile App Development</h3>
+                    <p className="text-white group-hover:text-black text-sm md:text-base lg:text-lg font-montserrat">
                       Transform ideas into scalable, user-friendly software and mobile apps tailored to meet your
                       unique business needs.
                     </p>
@@ -125,8 +124,8 @@ export default function Home() {
 
                   {/* Card 3 */}
                   <div className="group bg-[#0D476D] shadow-lg rounded-3xl p-6 hover:bg-white transition-all duration-300">
-                    <h3 className="text-white font-urbanist text-2xl font-semibold mb-4 group-hover:text-black">AI-Driven Finance Marketing</h3>
-                    <p className="text-white group-hover:text-black text-lg font-montserrat">
+                    <h3 className="text-white font-urbanist text-lg md:text-xl lg:text-2xl font-semibold mb-4 group-hover:text-black">AI-Driven Finance Marketing</h3>
+                    <p className="text-white group-hover:text-black text-sm md:text-base lg:text-lg font-montserrat">
                       Enhance financial strategies with AI tools for predictive analytics, risk management, and
                       automated decision-making to optimize operations.
                     </p>
@@ -134,8 +133,8 @@ export default function Home() {
 
                   {/* Card 4 */}
                   <div className="group bg-white shadow-lg rounded-3xl p-6 hover:bg-gradient-to-r from-[#0D476D] to-[#115684] transition-all duration-300">
-                    <h3 className="font-urbanist text-2xl font-semibold text-gray-800 mb-4 group-hover:text-white">Digital & AI Marketing</h3>
-                    <p className="text-black group-hover:text-white text-lg font-montserrat">
+                    <h3 className="font-urbanist text-lg md:text-xl lg:text-2xl font-semibold text-gray-800 mb-4 group-hover:text-white">Digital & AI Marketing</h3>
+                    <p className="text-black group-hover:text-white text-sm md:text-base lg:text-lg font-montserrat">
                       Leverage AI in digital marketing to create data-driven campaigns, personalize experiences,
                       and maximize ROI through optimized performance.
                     </p>
