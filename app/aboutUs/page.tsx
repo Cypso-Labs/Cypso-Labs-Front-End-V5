@@ -25,13 +25,13 @@ function AboutPage() {
         style={{ backgroundImage: "url('/images/hero.png')" }}
       >
         <div className="text-center py-16 px-6 sm:py-20 sm:px-8 md:py-28 md:px-12 bg-black bg-opacity-60">
-          <div className="flex justify-center mb-4">
+          {/* <div className="flex justify-center mb-4">
             <img
               src="/cypso-logo.png"
               alt="Cypso Labs Logo"
               className="w-12 h-12 sm:w-16 sm:h-16"
             />
-          </div>
+          </div> */}
           <h1
             className={`${urbanist.className} text-3xl sm:text-5xl md:text-6xl font-bold leading-tight`}
           >
