@@ -36,10 +36,10 @@ export default function Home() {
 
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
-                <button className="bg-[#0D476D] hover:bg-white text-white hover:text-[#0D476D] shadow-md hover:shadow-lg font-semibold py-3 px-16 sm:px-6 rounded-lg transition-all duration-300 font-montserrat">
+                <button className="bg-[#0D476D] hover:bg-white text-white hover:text-[#0D476D] shadow-md hover:shadow-lg font-semibold py-3 px-16 rounded-lg transition-all duration-300 font-montserrat">
                     Explore Us
                 </button>
-                <button className="border-2 border-white hover:border-[#0D476D] text-white hover:text-[#0D476D] shadow-md hover:shadow-lg font-semibold py-3 px-16 sm:px-6 rounded-lg transition-all duration-300 font-montserrat">
+                <button className="border-2 border-white hover:border-[#0D476D] text-white hover:text-[#0D476D] shadow-md hover:shadow-lg font-semibold py-3 px-16 rounded-lg transition-all duration-300 font-montserrat">
                     Contact
                 </button>
                 </div>
@@ -90,7 +90,7 @@ export default function Home() {
                 {/* Title */}
                 <div className="flex flex-col-reverse md:flex-row justify-between items-center mb-10">
                     {/* Left Side - Button */}
-                    <button className="bg-[#0D476D] hover:bg-white text-white hover:text-[#0D476D] font-semibold rounded-[12px] h-[72px] px-[38px] border-2 border-transparent hover:border-[#0D476D] py-[8px] transition-all duration-300 mb-4 md:mb-0 sm:mt-0 mt-5 font-montserrat">
+                    <button className="bg-[#0D476D] hover:bg-white text-white hover:text-[#0D476D] font-semibold rounded-[12px] h-[72px] px-[38px] border-2 border-transparent hover:border-[#0D476D] py-[8px] transition-all duration-300 mb-0 md:mb-4 sm:mt-5 mt-0 font-montserrat">
                         Get Started
                     </button>
 
