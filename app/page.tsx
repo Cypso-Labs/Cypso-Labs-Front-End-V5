@@ -2,12 +2,15 @@ import Image from "next/image";
 import React from "react";
 import hero from '../public/images/hero.png';
 import { Urbanist, Montserrat } from 'next/font/google';
+import HeroImage from "./ui/components/hero-image";
 
 const urbanist = Urbanist({
+  subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
 const montserrat = Montserrat({
+  subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
@@ -15,17 +18,9 @@ export default function Home() {
   return (
     <div >
         <section className="relative text-white m-5 rounded-[18px] overflow-hidden">
-            {/* Background Image */}
+            Background Image
             <div className="absolute inset-0 w-full h-full z-0">
-                <Image
-                src={hero}
-                alt="Hero Background"
-                layout="fill"
-                objectFit="cover"
-                quality={100}
-                placeholder="blur"
-                priority
-                />
+                <HeroImage />
             </div>
 
             {/* Content */}
@@ -44,10 +39,25 @@ export default function Home() {
 
                 {/* Buttons */}
                 <div className={`${montserrat.className} flex flex-col sm:flex-row gap-4 md:gap-6`}>
-                <button className="bg-[#0D476D] hover:bg-white text-white hover:text-[#0D476D] shadow-md hover:shadow-lg font-semibold py-3 px-16 rounded-lg transition-all duration-300">
+                <button className="bg-[#0D476D] hover:bg-white text-white hover:text-[#0D476D] shadow-md hover:shadow-lg font-semibold py-3 rounded-lg transition-all duration-300 flex w-[279px] md:w-[234px] items-center justify-center">
                     Explore Us
+                    <svg
+                      className="h-[15px] pl-2"
+                      // width="6"
+                      // height="6"
+                      viewBox="0 0 6 6"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M5.02087 0.274742C5.10127 0.274792 5.17836 0.306752 5.23521 0.363602C5.29207 0.420453 5.32403 0.497544 5.32408 0.577943L5.32408 4.01041C5.32551 4.05112 5.31873 4.09171 5.30414 4.12975C5.28955 4.16779 5.26745 4.20251 5.23915 4.23182C5.21086 4.26113 5.17695 4.28445 5.13944 4.30037C5.10194 4.31629 5.06162 4.3245 5.02087 4.3245C4.98013 4.3245 4.93981 4.31629 4.9023 4.30037C4.8648 4.28445 4.83089 4.26113 4.80259 4.23182C4.7743 4.20251 4.75219 4.16779 4.7376 4.12975C4.72301 4.09171 4.71624 4.05112 4.71767 4.01041V1.3102L0.658785 5.36909C0.601888 5.42599 0.52472 5.45795 0.444256 5.45795C0.363792 5.45795 0.286624 5.42599 0.229727 5.36909C0.172831 5.31219 0.140866 5.23503 0.140866 5.15456C0.140866 5.0741 0.17283 4.99693 0.229727 4.94003L4.28862 0.881143L1.58841 0.881144C1.54769 0.882581 1.5071 0.875802 1.46906 0.861212C1.43102 0.846622 1.39631 0.82452 1.367 0.796223C1.33768 0.767926 1.31437 0.734015 1.29845 0.696513C1.28252 0.659011 1.27432 0.618685 1.27432 0.577943C1.27432 0.5372 1.28252 0.496875 1.29845 0.459373C1.31437 0.42187 1.33768 0.387959 1.367 0.359663C1.39631 0.331366 1.43102 0.309263 1.46906 0.294673C1.5071 0.280083 1.54769 0.273304 1.58841 0.274742L5.02087 0.274742Z"
+                        fill="#F9F9F9"
+                      />
+                    </svg>
                 </button>
-                <button className="border-2 border-white hover:border-[#0D476D] text-white hover:text-[#0D476D] shadow-md hover:shadow-lg font-semibold py-3 px-16 rounded-lg transition-all duration-300">
+                <button className="border-2 border-white hover:border-[#0D476D] text-white hover:text-[#0D476D] shadow-md hover:shadow-lg font-semibold py-3 rounded-lg transition-all duration-300 w-[279px] md:w-[234px]">
                     Contact
                 </button>
                 </div>
@@ -98,8 +108,23 @@ export default function Home() {
                 {/* Title */}
                 <div className="flex flex-col-reverse md:flex-row justify-between items-center mb-10">
                     {/* Left Side - Button */}
-                    <button className={`${montserrat.className} bg-[#0D476D] hover:bg-white text-white hover:text-[#0D476D] font-semibold rounded-[12px] h-[72px] px-[38px] border-2 border-transparent hover:border-[#0D476D] py-[8px] transition-all duration-300 mb-4 md:mb-0 sm:mt-0 mt-4`}>
+                    <button className={`${montserrat.className} bg-[#0D476D] hover:bg-white text-white hover:text-[#0D476D] font-semibold rounded-[12px] h-[56px] lg:h-[72px] w-[279px] md:w-[243px] border-2 border-transparent hover:border-[#0D476D] py-[8px] transition-all duration-300 mb-4 md:mb-0 sm:mt-0 mt-4 flex justify-center items-center`}>
                         Get Started
+                        <svg
+                      className="h-[15px] pl-2"
+                      // width="6"
+                      // height="6"
+                      viewBox="0 0 6 6"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M5.02087 0.274742C5.10127 0.274792 5.17836 0.306752 5.23521 0.363602C5.29207 0.420453 5.32403 0.497544 5.32408 0.577943L5.32408 4.01041C5.32551 4.05112 5.31873 4.09171 5.30414 4.12975C5.28955 4.16779 5.26745 4.20251 5.23915 4.23182C5.21086 4.26113 5.17695 4.28445 5.13944 4.30037C5.10194 4.31629 5.06162 4.3245 5.02087 4.3245C4.98013 4.3245 4.93981 4.31629 4.9023 4.30037C4.8648 4.28445 4.83089 4.26113 4.80259 4.23182C4.7743 4.20251 4.75219 4.16779 4.7376 4.12975C4.72301 4.09171 4.71624 4.05112 4.71767 4.01041V1.3102L0.658785 5.36909C0.601888 5.42599 0.52472 5.45795 0.444256 5.45795C0.363792 5.45795 0.286624 5.42599 0.229727 5.36909C0.172831 5.31219 0.140866 5.23503 0.140866 5.15456C0.140866 5.0741 0.17283 4.99693 0.229727 4.94003L4.28862 0.881143L1.58841 0.881144C1.54769 0.882581 1.5071 0.875802 1.46906 0.861212C1.43102 0.846622 1.39631 0.82452 1.367 0.796223C1.33768 0.767926 1.31437 0.734015 1.29845 0.696513C1.28252 0.659011 1.27432 0.618685 1.27432 0.577943C1.27432 0.5372 1.28252 0.496875 1.29845 0.459373C1.31437 0.42187 1.33768 0.387959 1.367 0.359663C1.39631 0.331366 1.43102 0.309263 1.46906 0.294673C1.5071 0.280083 1.54769 0.273304 1.58841 0.274742L5.02087 0.274742Z"
+                        fill="#F9F9F9"
+                      />
+                    </svg>
                     </button>
 
                     {/* Right Side - Heading */}
