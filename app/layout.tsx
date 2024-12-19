@@ -47,9 +47,9 @@ export default function RootLayout({
 
           <div>{children}</div>
 
-          {/* <div className="">
+          <div className="">
             <ContactUs />
-          </div> */}
+          </div>
 
           <div>
             <Footer />
