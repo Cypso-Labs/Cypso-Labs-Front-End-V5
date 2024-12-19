@@ -1,11 +1,12 @@
 import React from "react";
-import logo from "../../../../public/cypso-logo.svg";
-import Image from "next/image";
+// import logo from "../../../../public/cypso-logo.svg";
+// import Image from "next/image";
 import { Lato } from "next/font/google";
 import localFont from "next/font/local";
 import "./index.css";
 
 const lato = Lato({
+  preload: false,
   weight: "400",
 });
 

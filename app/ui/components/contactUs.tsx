@@ -4,10 +4,12 @@ import robat from "../../../public/images/robot-blue 1.png";
 import { Urbanist, Montserrat } from "next/font/google";
 
 const urbanist = Urbanist({
+  preload: false,
   weight: ["500"],
 });
 
 const montserrat = Montserrat({
+  preload: false,
   weight: ["700"],
 });
 
