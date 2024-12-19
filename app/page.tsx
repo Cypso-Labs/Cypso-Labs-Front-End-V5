@@ -18,11 +18,6 @@ export default function Home() {
   return (
     <div >
         <section className="relative text-white m-5 rounded-[18px] overflow-hidden">
-            Background Image
-            <div className="absolute inset-0 w-full h-full z-0">
-                <HeroImage />
-            </div>
-
             {/* Content */}
             <div className="relative container mx-auto flex flex-col items-center justify-center min-h-screen text-center px-12 z-10">
                 {/* Heading */}
@@ -198,8 +193,6 @@ export default function Home() {
                 </div>
               </div>
             </section>
-
-
     </div>
   );
 }
