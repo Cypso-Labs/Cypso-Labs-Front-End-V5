@@ -1,10 +1,20 @@
-
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { CoreValue } from "./CoreValue";
 import { Founder } from "./Founder";
 import { SectionHeading } from "./SectionHeading";
 import { coreValues, founders } from "./data";
+import { Urbanist } from "next/font/google";
+import { Montserrat } from "next/font/google";
+
+const urbanist = Urbanist({
+  weight: ["600"],
+  subsets: ["latin"],
+});
+const montserrat = Montserrat({
+  weight: ["500"],
+  subsets: ["latin"],
+});
 
 function AboutPage() {
   return (
@@ -14,18 +24,22 @@ function AboutPage() {
         className="relative w-full bg-cover bg-center text-white"
         style={{ backgroundImage: "url('/images/hero.png')" }}
       >
-        <div className="text-center py-16 px-8 sm:py-20 sm:px-12 md:py-28 md:px-16 bg-black bg-opacity-60">
+        <div className="text-center py-16 px-6 sm:py-20 sm:px-8 md:py-28 md:px-12 bg-black bg-opacity-60">
           <div className="flex justify-center mb-4">
             <img
               src="/cypso-logo.png"
               alt="Cypso Labs Logo"
-              className="w-12 h-12 sm:w-16 sm:h-16 p-4"
+              className="w-12 h-12 sm:w-16 sm:h-16"
             />
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+          <h1
+            className={`${urbanist.className} text-3xl sm:text-5xl md:text-6xl font-bold leading-tight`}
+          >
             About <span className="text-[#5ABEF7]">Cypso Labs</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+          <p
+            className={`${montserrat.className} mt-4 text-sm sm:text-base md:text-lg text-gray-300 max-w-3xl mx-auto`}
+          >
             At Cypso Labs (Pvt) Ltd, we specialize in transforming your ideas
             into digital reality. Our expert team crafts innovative, customized
             solutions that bring your vision to life, driving success in the
@@ -35,24 +49,32 @@ function AboutPage() {
       </div>
 
       {/* Content Sections */}
-      <div className="flex flex-col items-center px-6 py-10 sm:px-10 md:px-20 bg-neutral-50">
+      <div className="flex flex-col items-center px-4 sm:px-6 py-10 bg-neutral-50">
         <div className="flex flex-col w-full max-w-[1181px]">
           {/* "We Are Cypso Labs" Section */}
           <div className="flex flex-wrap gap-6 items-start">
-            <div className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-wide text-neutral-900 w-full md:w-[478px]">
+            <div
+              className={`${urbanist.className} text-2xl sm:text-4xl md:text-5xl font-semibold tracking-wide text-neutral-900 w-full md:w-[478px]`}
+            >
               We Are
               <br />
-              <span className="font-bold text-[#5ABEF7]">Cypso Labs</span>
+              <span
+                className={`${urbanist.className} font-bold text-[#5ABEF7]`}
+              >
+                Cypso Labs
+              </span>
             </div>
-            <div className="text-sm sm:text-base md:text-lg font-medium leading-6 sm:leading-7 md:leading-8 text-black text-opacity-80 w-full md:w-[678px]">
+            <div
+              className={`${montserrat.className} text-sm sm:text-base md:text-lg leading-relaxed text-black text-opacity-80 w-full md:w-[678px]`}
+            >
               We Are Cypso Labs (Pvt) Ltd, a dynamic team of innovators
               committed to delivering cutting-edge digital solutions that
               empower businesses to thrive in the digital age.
               <br />
               <br />
               With a passion for technology and a focus on excellence, we
-              specialize in providing customized software development, Gaming,
-              block chaining, and Financial systems services.
+              specialize in providing customized software development, gaming,
+              blockchain, and financial systems services.
               <br />
               <br />
               Our mission is to help businesses unlock their full potential by
