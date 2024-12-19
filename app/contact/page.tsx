@@ -6,10 +6,12 @@ import { Urbanist, Montserrat } from "next/font/google";
 
 const urbanist = Urbanist({
   weight: ["500", "600"],
+  subsets: ["latin"],
 });
 
 const montserrat = Montserrat({
   weight: ["500"],
+  subsets: ["latin"],
 });
 
 function ContactUsPage() {

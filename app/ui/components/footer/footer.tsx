@@ -7,6 +7,7 @@ import "./index.css";
 
 const lato = Lato({
   weight: "400",
+  subsets: ["latin"],
 });
 
 const font = localFont({
