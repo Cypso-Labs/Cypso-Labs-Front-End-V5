@@ -1,7 +1,17 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable @next/next/no-html-link-for-pages */
 "use client";
 import * as React from "react";
+import localFont from "next/font/local";
+import { Urbanist } from "next/font/google";
+import Link from "next/link";
+
+const nicoMoji = localFont({
+  src: "../fonts/NicoMoji-Regular.ttf",
+});
+
+const urbanist = Urbanist({
+  weight: "500",
+  subsets: ["latin"],
+});
 
 interface NavLinkProps {
   href: string;
@@ -39,14 +49,14 @@ const NavBar: React.FC = () => {
   ];
 
   return (
-    <nav className="absolute top-8 left-0 w-full z-10 px-6">
+    <nav className="relative top-[48px] w-full z-20 px-6">
       {/* Navbar Container */}
       <div className="bg-white/10 backdrop-blur-lg shadow-lg rounded-full mx-auto max-w-screen-lg">
         <div className="flex items-center justify-between h-16 px-6">
           {/* Logo */}
-          <a href="/" className="text-white text-2xl font-bold">
+          <Link href="/" className={`${nicoMoji.className} text-white text-2xl font-bold`}>
             CYPSO LABS
-          </a>
+          </Link>
 
           {/* Hamburger Menu */}
           <button
@@ -106,7 +116,7 @@ const NavBar: React.FC = () => {
             </div>
 
             {/* Navigation Links */}
-            <ul className="flex flex-col space-y-4 mt-8">
+            <ul className={`${urbanist.className} flex flex-col space-y-4 mt-8`}>
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <NavLink

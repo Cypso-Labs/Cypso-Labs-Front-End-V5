@@ -1,8 +1,8 @@
 import React from "react";
-// import logo from "../../../../public/cypso-logo.svg";
-// import Image from "next/image";
 import { Lato } from "next/font/google";
 import localFont from "next/font/local";
+// import logo from "../../../../public/cypso-logo.svg";
+// import Image from "next/image";
 import "./index.css";
 
 const lato = Lato({
@@ -17,14 +17,15 @@ const font = localFont({
 function Footer() {
   return (
     <div>
-      <footer className="">
+      <footer>
         {/* <Image
-          className="z-10 absolute top-[20px] end-[20px]"
+          className="absolute z-10 lg:w-[211.71px]"
           src={logo}
           alt="cypso logo"
+          sizes="100vw"
         /> */}
         <div
-          className={`rounded-edge text-[#F9F9F9] mx-auto w-full p-8 md:p-11 lg:p-16 pb-5 md:pb-10 mt-16 ${lato.className}`}
+          className={`rounded-edge text-[#F9F9F9] mx-auto w-full p-8 md:p-11 lg:p-2 pb-5 md:pb-10 mt-16 ${lato.className}`}
           style={{
             background:
               "linear-gradient(89.79deg, #0D476D 0.15%, #115684 99.79%)",
@@ -37,7 +38,9 @@ function Footer() {
           <div className="md:flex md:justify-between">
             <div className="mt-5 flex justify-center gap-6 md:gap-11 lg:gap-28 xl:gap-56 md:mt-0">
               <div className="flex-grow ms-10 md:ms-0">
-                <h2 className="mb-3 md:text-[17px] lg:text-[20px]">Quick Links</h2>
+                <h2 className="mb-3 md:text-[17px] lg:text-[20px]">
+                  Quick Links
+                </h2>
                 <ul className="text-[14px] md:text-[17px] lg:text-[20px] text-[#FFFFFFCC]">
                   <li className="mb-3">
                     <a href="#" className=" hover:underline">
@@ -68,7 +71,9 @@ function Footer() {
               </div>
 
               <div className="flex-grow md:flex-grow-0">
-                <h2 className="mb-3 md:text-[17px] lg:text-[20px]">Join With Us</h2>
+                <h2 className="mb-3 md:text-[17px] lg:text-[20px]">
+                  Join With Us
+                </h2>
                 <ul className="text-[14px] md:text-[17px] lg:text-[20px] text-[#FFFFFFCC]">
                   <li className="mb-3">
                     <a href="#" className="hover:underline">
@@ -96,7 +101,9 @@ function Footer() {
 
             <div className="flex flex-col items-center py-5 md:py-0 md:justify-center gap-3 text-[14px] md:text-[15px] md:items-start lg:text-[20px] text-center">
               <div className="text-center">
-                <h1 className={`${font.className} hidden md:block text-[35px] lg:text-[45px]`}>
+                <h1
+                  className={`${font.className} hidden md:block text-[35px] lg:text-[45px]`}
+                >
                   CYPSO LABS
                 </h1>
               </div>
@@ -140,7 +147,7 @@ function Footer() {
 
               <div className="flex gap-2 md:gap-1 items-center">
                 <svg
-                className="h-[10px] md:h-[15px]"
+                  className="h-[10px] md:h-[15px]"
                   // width="19"
                   // height="15"
                   viewBox="0 0 19 15"

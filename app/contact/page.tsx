@@ -10,7 +10,7 @@ const urbanist = Urbanist({
 });
 
 const montserrat = Montserrat({
-  weight: ["500"],
+  weight: ["500", "700"],
   subsets: ["latin"],
 });
 
@@ -52,6 +52,40 @@ function ContactUsPage() {
           </p>
         </div>
       </section>
+
+      <div className="text-center px-12 mb-14 space-y-2 md:flex md:justify-between md:items-end md:mx-28">
+        <div>
+          <h1
+            className={`${urbanist.className} font-[600] text-[32px] md:text-[56px] md:text-start`}
+          >
+            Our Experts Are <br className="hidden md:block" /> Ready to Guide
+            You
+          </h1>
+        </div>
+
+        <div>
+          <button
+            type="submit"
+            className={`${montserrat.className} font-[700] md:text-[20px] mx-auto flex gap-4 w-full md:w-auto justify-center items-center rounded-[12px] text-white bg-[#0B3E63] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-7 py-5`}
+          >
+            Schedule a Meeting
+            <svg
+              width="13"
+              height="14"
+              viewBox="0 0 13 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M12.1567 0.373597C12.3555 0.373721 12.5461 0.452729 12.6866 0.593267C12.8271 0.733805 12.9061 0.924379 12.9063 1.12313L12.9063 9.60841C12.9098 9.70907 12.8931 9.80941 12.857 9.90345C12.8209 9.99749 12.7663 10.0833 12.6963 10.1558C12.6264 10.2282 12.5425 10.2859 12.4498 10.3252C12.3571 10.3646 12.2574 10.3849 12.1567 10.3849C12.056 10.3849 11.9563 10.3646 11.8636 10.3252C11.7709 10.2859 11.6871 10.2282 11.6171 10.1558C11.5472 10.0833 11.4925 9.99749 11.4565 9.90345C11.4204 9.80941 11.4036 9.70907 11.4072 9.60841L11.4072 2.93332L1.37335 12.9672C1.2327 13.1078 1.04193 13.1868 0.843017 13.1868C0.644105 13.1868 0.45334 13.1078 0.312688 12.9672C0.172036 12.8265 0.0930182 12.6358 0.0930178 12.4368C0.0930175 12.2379 0.172036 12.0472 0.312688 11.9065L10.3465 1.87266L3.67145 1.87266C3.57079 1.87622 3.47045 1.85946 3.37641 1.82339C3.28237 1.78732 3.19656 1.73269 3.1241 1.66273C3.05163 1.59278 2.994 1.50895 2.95464 1.41624C2.91527 1.32354 2.89499 1.22385 2.89499 1.12313C2.89499 1.02241 2.91527 0.922725 2.95464 0.830017C2.994 0.737309 3.05163 0.653479 3.1241 0.583528C3.19656 0.513577 3.28237 0.458937 3.37641 0.422869C3.47045 0.386801 3.57079 0.370045 3.67144 0.373597L12.1567 0.373597Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
 
       {/* ---------------------section 2--------------------- */}
       <section className="p-3 lg:p-16 xl:p-24 md:flex md:justify-center md:gap-5">
@@ -315,7 +349,7 @@ function ContactUsPage() {
       </section>
 
       {/* ---------------------section 3--------------------- */}
-      <section>
+      <section className="mb-20">
         <div className="flex justify-center">
           <iframe
             className="w-full max-w-screen-xl h-[145px] md:h-[300px] lg:h-[470px] rounded-[30px] px-3"

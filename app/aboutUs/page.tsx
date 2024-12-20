@@ -18,20 +18,20 @@ const montserrat = Montserrat({
 
 function AboutPage() {
   return (
-    <div className="flex flex-col items-center bg-neutral-50">
+    <div className="flex flex-col items-center">
       {/* Hero Section */}
       <div
         className="relative w-full bg-cover bg-center text-white"
-        style={{ backgroundImage: "url('/images/hero.png')" }}
+        // style={{ backgroundImage: "url('/images/hero.png')" }}
       >
-        <div className="text-center py-16 px-6 sm:py-20 sm:px-8 md:py-28 md:px-12 bg-black bg-opacity-60">
-          {/* <div className="flex justify-center mb-4">
+        <div className="h-screen flex flex-col justify-center text-center py-16 px-6 sm:py-20 sm:px-8 md:py-28 md:px-12">
+          <div className="flex justify-center mb-4">
             <img
               src="/cypso-logo.png"
               alt="Cypso Labs Logo"
               className="w-12 h-12 sm:w-16 sm:h-16"
             />
-          </div> */}
+          </div>
           <h1
             className={`${urbanist.className} text-3xl sm:text-5xl md:text-6xl font-bold leading-tight`}
           >
@@ -49,7 +49,7 @@ function AboutPage() {
       </div>
 
       {/* Content Sections */}
-      <div className="flex flex-col items-center px-4 sm:px-6 py-10 bg-neutral-50">
+      <div className="flex flex-col items-center px-4 sm:px-6 py-10">
         <div className="flex flex-col w-full max-w-[1181px]">
           {/* "We Are Cypso Labs" Section */}
           <div className="flex flex-wrap gap-6 items-start">
@@ -111,7 +111,7 @@ function AboutPage() {
           </div>
 
           {/* International Client Network Section */}
-          <div className="flex flex-col mt-16 sm:mt-20 md:mt-24">
+          <div className="flex flex-col mt-16 sm:mt-20 md:my-20">
             <SectionHeading
               title="Our International Client Network"
               description="Our international client network spans across various industries and regions, reflecting our global expertise in delivering innovative solutions and exceptional service."
