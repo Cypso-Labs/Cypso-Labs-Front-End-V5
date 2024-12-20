@@ -12,9 +12,9 @@ import {
 const SocialMedia = () => {
   const pathname = usePathname(); // Get current path
   const isAboutPage = pathname === "/aboutUs"; // Check if it's the AboutUs page
-
+  const isjobPostig = pathname === "/jobPosting"; 
   if (isAboutPage) return null; // Disable SocialMedia component on About Us page
-
+  if (isjobPostig) return null; 
   return (
     <div className={`fixed left-[48px] top-[296px] z-50 ${pathname=='/contact' ? 'hidden' : ''}`}>
       {/* Desktop View */}
