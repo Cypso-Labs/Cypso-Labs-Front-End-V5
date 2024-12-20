@@ -108,11 +108,11 @@ const NavBar: React.FC = () => {
 
             {/* Small Icon at the Top */}
             <div className="flex justify-center mt-4">
-              <img
+              {/* <img
                 src="/images/image1.png" // Replace with the correct path
                 alt="Menu Icon"
                 className="w-10 h-10"
-              />
+              /> */}
             </div>
 
             {/* Navigation Links */}

@@ -201,7 +201,7 @@ export default function Home() {
                 title={caseStudy.title}
                 description={caseStudy.description}
                 imgSrc={caseStudy.imgSrc}
-                techStack={undefined}
+                // techStack={undefined}
               />
             ))}
           </div>

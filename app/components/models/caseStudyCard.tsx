@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { Urbanist } from "next/font/google";
 import { Montserrat } from "next/font/google";
 
@@ -12,7 +12,7 @@ const montserrat = Montserrat({
   display: 'swap',
 });
 
-const CaseStudyCard = ({ title, description, techStack, imgSrc }) => {
+const CaseStudyCard = ({ title, description, imgSrc }: Readonly<{title:string, description:string, imgSrc:StaticImageData}>) => {
   return (
     <div className="relative bg-white rounded-[24px] shadow-sm hover:shadow-lg transition-shadow duration-300 w-full max-w-[377px] aspect-[3/4] sm:aspect-[4/5] font-medium">
       {/* Image Section */}
