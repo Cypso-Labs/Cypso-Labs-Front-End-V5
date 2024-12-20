@@ -1,13 +1,11 @@
 import * as React from "react";
 import { FileUploadProps } from "./types";
-
+import Image from "next/image";
 
 export const FileUpload: React.FC<FileUploadProps> = ({
   label,
   acceptedFileTypes,
   maxSize,
-//   selectedFile,
-//   setSelectedFile,
 }) => {
   const [error, setError] = React.useState<string | null>(null);
 
@@ -23,12 +21,10 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 
       // Check file size
       if (file.size > 5 * 1024 * 1024) {
-        // 5MB in bytes
         setError("File size exceeds the maximum limit of 5MB.");
         return;
       }
 
-    //   setSelectedFile(file);
       setError(null); // Clear any previous error
     }
   };
@@ -45,11 +41,13 @@ export const FileUpload: React.FC<FileUploadProps> = ({
         className="flex flex-col justify-center px-5 py-9 mt-3.5 w-full text-base tracking-normal leading-loose text-center bg-white rounded-xl border border-solid border-neutral-200 min-h-[169px] cursor-pointer"
         onClick={() => document.getElementById("fileUpload")?.click()}
       >
-        <img
+        <Image
           loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/4ce350aa64044b4391cfb1a87f55ff22/29987266df515e9aa21e5e95889e9e871bd0ada158dda69504498c42651450bc?apiKey=4ce350aa64044b4391cfb1a87f55ff22&"
+          src="/images/fileuploader.svg"
           alt=""
-          className="object-contain self-center w-6 aspect-square"
+          width={24} // Provide the appropriate width
+          height={24} // Provide the appropriate height
+          className="object-contain self-center aspect-square"
         />
         <div className="mt-2.5 text-zinc-800">
           Click or drag and drop to upload your file
@@ -66,12 +64,6 @@ export const FileUpload: React.FC<FileUploadProps> = ({
           onChange={handleFileChange}
         />
       </div>
-
-      {/* {selectedFile && (
-        <div className="mt-2 text-green-500">
-          File selected: {selectedFile.name}
-        </div>
-      )} */}
 
       {error && <div className="mt-2 text-red-500">{error}</div>}
     </div>
