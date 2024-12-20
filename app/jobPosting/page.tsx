@@ -12,7 +12,7 @@ import { JobDescription } from "./JobDescription";
 import CareersHeader from "./CareersHeader";
 
 const urbanist = Urbanist({
-  weight: ["600"],
+  weight: ["400"],
   subsets: ["latin"],
 });
 const montserrat = Montserrat({
@@ -20,7 +20,7 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 const inter = Inter({
-  weight: ["400", "500", "600"],
+  weight: ["400"],
   subsets: ["latin"],
 });
 
