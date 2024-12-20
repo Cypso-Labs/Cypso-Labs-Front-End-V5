@@ -31,10 +31,12 @@ const caseStudies = [
 
 const urbanist = Urbanist({
   weight: ["500", "600"],
+  subsets: ['latin']
 });
 
 const montserrat = Montserrat({
   weight: ["500"],
+  subsets: ['latin']
 });
 
 // Main Component
