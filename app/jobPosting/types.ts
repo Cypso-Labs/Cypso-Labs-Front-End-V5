@@ -1,6 +1,7 @@
+import React from "react";
 export interface JobDetailProps {
   title: string;
-  description: string;
+  description: React.ReactNode;
   location: string;
   type: string;
 }
@@ -10,6 +11,7 @@ export interface FormInputProps {
   type: string;
   placeholder: string;
   id: string;
+  className?: string;
 }
 
 export interface FileUploadProps {

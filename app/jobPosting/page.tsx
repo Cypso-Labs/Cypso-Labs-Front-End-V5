@@ -158,8 +158,8 @@ const JobPosting: React.FC = () => {
               label="Resume/CV"
               acceptedFileTypes="PDF"
               maxSize="Max 5MB"
-              selectedFile={selectedFile}
-              setSelectedFile={setSelectedFile}
+            //   selectedFile={selectedFile}
+            //   setSelectedFile={setSelectedFile}
             />
 
             <button
