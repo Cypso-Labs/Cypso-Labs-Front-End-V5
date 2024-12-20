@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import CaseStudyCard from "../components/models/caseStudyCard";
+import CaseStudyCard from "../ui/components/caseStudyCard";
 import image1 from "../../public/images/case study.jpeg";
 import image2 from "../../public/images/2.jpeg";
 import image3 from "../../public/images/3.jpeg";

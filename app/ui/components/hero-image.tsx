@@ -6,10 +6,10 @@ function HeroImage() {
   return (
     <div>
       <Image
-        className="dark-bg object-cover -z-10 p-3 lg:p-4 rounded-[30px]"
+        className="object-cover -z-10 p-3 lg:p-4 rounded-[30px]"
         alt="Mountains"
         src={bgImage}
-        placeholder="blur"
+        // placeholder="blur"
         quality={100}
         fill
         sizes="100vw"
